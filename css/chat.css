@@ -1,0 +1,231 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+}
+
+/* template is only for copy-and-create-new-message, so it is hidden */
+.msgTemplate {
+    display: none;
+}
+
+.timeline-container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 44px;
+    top: 72px;
+}
+
+.loading {
+    background-image: url('/img/loading.gif');
+    background-size: 100% auto;
+}
+
+/* timeline, which is the conversation box */
+.timeline {
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+}
+
+/* do not display the top border of the first element */
+/* notice the 1st one is the template, so we hide 2nd here */
+/* not working for IE8 */
+.msg:nth-of-type(2) {
+    border-top: 0;
+}
+
+/* system message */
+.msg.systemMsg {
+    color: #737373;
+}
+
+/* do not display avatar for system message */
+.msg.systemMsg .avatar {
+    display: none;
+}
+
+.msg.systemMsg .msgContent {
+    margin-left: 1px;
+}
+
+.msg {
+    width: 100%;
+    border-top: 1px solid #888888;
+    padding: 3px 0;
+    position: relative;
+}
+
+.msgContent {
+    padding: 4px 0;
+    margin: 0 3px 3px 41px;
+    word-wrap: break-word;
+}
+
+.msg .avatar {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    padding: 5px;
+    float: left;
+}
+
+.msgBoxContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.msgBoxContainer .barContainer {
+    height: 36px;
+    background-color: #e5e5e5;
+}
+
+.msgBoxContainer .header {
+    background: #262626;
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.msgBoxContainer .body {
+    width: 100%;
+}
+
+.editable-textbox {
+    min-height: 20px; /* when there is no content */
+    width: 195px;
+    overflow-x: hidden;
+    display: inline-block;
+    border-radius: 3px;
+    max-height: 60px;
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
+.sendMsgBox {
+    border-top: 1px solid #737373;
+    border-collapse: collapse;
+    padding: 10px 0;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ffffff;
+}
+
+.msgBoxContainer .header .buttons {
+    float: right;
+    margin-right: 3px;
+}
+
+.buttons div {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.msgBoxContainer .header .name {
+    line-height: 20px;
+    font-size: 13px;
+}
+
+.msg .name {
+    margin: 0 3px 3px 0;
+}
+
+/* here we steal some image from Google hangout */
+.optionBtn .videoBtn {
+    background: no-repeat url("/img/google-icons.png") -134px -247px;
+    height: 32px;
+    width: 29px;
+}
+
+.optionBtn .friendBtn {
+    background: no-repeat url("/img/google-icons.png") -82px -293px;
+    height: 29px;
+    width: 29px;
+}
+
+.optionBtn .option {
+    background: no-repeat url("/img/google-icons.png") -393px -377px;
+    height: 32px;
+    width: 29px;
+    float: right;
+}
+
+.minChat.btn {
+    background: no-repeat url("/img/google-icons.png") -376px -319px;
+    height: 24px;
+    width: 24px;
+}
+
+.popChat.btn {
+    background: no-repeat url("/img/google-icons.png") -264px -319px;
+    height: 24px;
+    width: 24px;
+}
+
+.closeChat.btn {
+    background: no-repeat url("/img/google-icons.png") -437px -234px;
+    height: 24px;
+    width: 24px;
+}
+
+.emoji.btn {
+    background: no-repeat url("/img/google-icons.png") -134px 0;
+    height: 20px;
+    width: 20px;
+    margin-left: 8px;
+}
+
+.camera.btn {
+    background: no-repeat url("/img/google-icons.png") -48px -22px;
+    height: 20px;
+    width: 20px;
+    float: right;
+    margin-right: 8px;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    margin: 1px;
+    /* of course, IE */
+    filter: alpha(opacity=alpha(opacity=60));
+    opacity: .6;
+    vertical-align: top;
+}
+
+.btn:hover {
+    filter: alpha(opacity=alpha(opacity=100));
+    opacity: 1;
+    border-radius: 2px;
+}
+
+.buttons .btn:hover {
+    background-color: #737373;
+}
+
+.header .status {
+    background: no-repeat url("/img/google-icons.png") -134px -232px;
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    margin-left: 2px;
+    margin-top: 6px;
+}

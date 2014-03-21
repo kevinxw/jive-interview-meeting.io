@@ -1,0 +1,50 @@
+body {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.project-title {
+    margin-top: 50px;
+    color: #049;
+}
+
+.page-center {
+    text-align: center;
+    margin-left: auto;
+}
+
+.chat-widget-btn {
+    margin-top: 30px;
+    height: 35px;
+    color: #fff;
+    background-color: #049;
+    border: 0;
+    font-weight: bold;
+    width: 180px;
+    cursor: pointer;
+}
+
+.chat-box-template {
+    display: none;
+}
+
+.chat-box-container {
+    position: fixed;
+    right: 5px;
+    bottom: 0;
+}
+
+.chat-box {
+    float: right;
+    margin-right: 10px;
+    background-color: #ffffff;
+}
+
+.chat-box iframe {
+    border: 1px solid #737373;
+    height: 350px;
+    width: 262px;
+    box-shadow: 0 0 5px #888888;
+    border: 5px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/css/chat.css"/>
+    <!-- use local jQuery -->
+    <script type="text/javascript" src="/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/peer.js"></script>
+    <script type="text/javascript" src="/js/message.js"></script>
+    <script type="text/javascript" src="/js/conversation.js"></script>
+    <script type="text/javascript" src="/js/chat.js"></script>
+</head>
+<body>
+<!--
+ Google Hangout uses "table" display to organize these. It makes
+ it hard to manage the page layout. I am not a fan of this.
+ So my solution has no "table" in it
+ -->
+<div class="msgBoxContainer">
+    <!-- we will display peer's name here -->
+    <div class="header">
+        <div class="status status-online"></div>
+        <!-- user name -->
+        <a class="name">Disconnected</a>
+
+        <div class="buttons">
+            <input type="button" class="minChat btn" title="Minimize"/>
+            <input type="button" class="popChat btn" title="Pop-out"/>
+            <input type="button" class="closeChat btn" title="Close"/>
+        </div>
+    </div>
+    <div class="body">
+        <div class="barContainer">
+            <!-- some video button -->
+            <div class="optionBtn">
+                <input type="button" class="videoBtn btn"/>
+                <input type="button" class="friendBtn btn"/>
+                <input type="button" class="option btn"/>
+            </div>
+        </div>
+        <div class="timeline-container">
+            <ol class="timeline">
+                <!-- This acts like a template, every time a new message kicks in, we will copy this -->
+                <li class="msg msgTemplate">
+                    <!-- user avatar, we do not store this on the server, thus no need to change it -->
+                    <img class="avatar" src="/img/somebody.jpg"/>
+                    <!-- speaker -->
+                    <a class="name">Somebody</a>
+                    <!-- message content -->
+                    <p class="msgContent"></p>
+                </li>
+            </ol>
+        </div>
+        <div class="sendMsgBox">
+            <!-- emoji button -->
+            <input type="button" class="emoji btn"/>
+            <!-- instead of a textarea, a div is much easier to manage -->
+            <div class="editable-textbox" contenteditable="true"></div>
+            <!-- upload photo button -->
+            <input type="button" class="camera btn"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
